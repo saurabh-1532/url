@@ -9,6 +9,8 @@ import cors from "cors";
 import { redirectFromShortUrl } from "./src/controller/short_url.controller.js";
 
 dotenv.config("./.env");
+//dotenv.config({ path: "./.env" });
+console.log("Loaded APP_URL:", process.env.APP_URL);
 
 const app = express();
 
@@ -18,7 +20,7 @@ app.use(express.urlencoded({extended:true}));
 
 app.use("/api/create",short_url);
 
-app.get("/",(req,res)=>{res.send("URL SHORTENER")});
+// app.get("/",(req,res)=>{res.send("URL SHORTENER")});
 
 app.get("/:id",redirectFromShortUrl);
     

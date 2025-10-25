@@ -22,7 +22,7 @@ export default function URLShortener() {
 
 
       setShortenedURL(response.data);
-      console.log(response.data)
+      console.log(response)
     } catch (err) {
       setError(err.message || 'An error occurred while shortening the URL')
     } finally {
