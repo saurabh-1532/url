@@ -25,9 +25,10 @@ app.use("/api/create",short_url);
 app.get("/:id",redirectFromShortUrl);
     
 
-app.listen(5000,()=>{
-    connectDB();
-    //console.log(process.env.MONGO_URI)
-    console.log("server is running on port 500");
+// app.listen(5000,()=>{
+//     connectDB();
+//     //console.log(process.env.MONGO_URI)
+//     console.log("server is running on port 500");
     
-})
+// })
+export default app;

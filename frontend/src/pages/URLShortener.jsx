@@ -21,7 +21,9 @@ export default function URLShortener() {
       })
 
 
-      setShortenedURL(response.data);
+      //setShortenedURL(response.data);
+      setShortenedURL({ shortUrl: response.data, longUrl: url })
+
       console.log(response)
     } catch (err) {
       setError(err.message || 'An error occurred while shortening the URL')
@@ -64,7 +66,8 @@ export default function URLShortener() {
 
           {/* Result Section */}
           {shortenedURL && !loading && (
-            <ShortenedURLCard shorturl={shortenedURL} longurl={url} />
+           // <ShortenedURLCard shorturl={shortenedURL} longurl={url} />
+            <ShortenedURLCard shorturl={shortenedURL.shortUrl} longurl={shortenedURL.longUrl} />
           )}
         </div>
 
