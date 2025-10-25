@@ -3,6 +3,7 @@ import axios from 'axios'
 import URLForm from '../components/URLForm'
 import ShortenedURLCard from '../components/ShortenedURLCard'
 
+
 export default function URLShortener() {
   const [url, setUrl] = useState('')
   const [shortenedURL, setShortenedURL] = useState(null)
@@ -15,9 +16,10 @@ export default function URLShortener() {
     setShortenedURL(null)
 
     try {
-      const response = await axios.post('http://localhost:5000/api/create', {
+      const response = await axios.post(import.meta.env.VITE_BACK_URL, {
         url: originalURL,
       })
+
 
       setShortenedURL(response.data);
       console.log(response.data)
