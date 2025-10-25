@@ -5,7 +5,7 @@ export default function ShortenedURLCard({ shorturl, longurl }) {
 
   const handleCopy = async () => {
     try {
-      console.log(longurl)
+     
       await navigator.clipboard.writeText(shorturl)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
