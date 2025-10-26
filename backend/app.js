@@ -8,7 +8,8 @@ import short_url from "./src/routes/shorturl.route.js";
 import cors from "cors";
 import { redirectFromShortUrl } from "./src/controller/short_url.controller.js";
 
-dotenv.config("./.env");
+
+dotenv.config();connectDB();
 //dotenv.config({ path: "./.env" });
 console.log("Loaded APP_URL:", process.env.APP_URL);
 
@@ -26,7 +27,7 @@ app.get("/:id",redirectFromShortUrl);
     
 
 // app.listen(5000,()=>{
-//     connectDB();
+//     
 //     //console.log(process.env.MONGO_URI)
 //     console.log("server is running on port 500");
     
