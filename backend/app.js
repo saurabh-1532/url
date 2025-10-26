@@ -21,7 +21,7 @@ app.use(express.urlencoded({extended:true}));
 
 app.use("/api/create",short_url);
 
-// app.get("/",(req,res)=>{res.send("URL SHORTENER")});
+app.get("/",(req,res)=>{res.send("URL SHORTENER")});
 
 app.get("/:id",redirectFromShortUrl);
     
