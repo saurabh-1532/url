@@ -16,7 +16,7 @@ export default function URLShortener() {
     setShortenedURL(null)
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_BACK_URL}`/api/create/url, {
+      const response = await axios.post(`${import.meta.env.VITE_BACK_URL}/api/create/url`, {
         url: originalURL,
       })
 
